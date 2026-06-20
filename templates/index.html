@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block main %} 
+<main>
+            
+    <form 
+        action="/transcribe"
+        method="POST"
+        enctype="multipart/form-data"
+    >
+        <label>Upload video or audio file (max 500Mb)</label>
+            <input 
+                type="file" 
+                id="file-upload" 
+                accept=".mp3,.mp4,.wav,.webm,.m4a,.flac,.ogg,.mpeg" 
+                aria-describedby="file-formats-accepted"
+                name="file"
+            >
+            <p 
+                id="file-formats-accepted"
+            >
+                Supported formats: Audio (MP3, WAV, M4A, FLAC, OGG) or Video (MP4, WEBM, MPEG)
+            </p>
+            <input type="submit" value="Upload">
+        </form>
+    </main>
+{% endblock %}
